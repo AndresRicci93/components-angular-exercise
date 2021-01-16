@@ -1,0 +1,22 @@
+<app-server></app-server>
+
+<!-- <mat-form-field class="example-full-width">
+    <mat-label>Server Name</mat-label>
+    <input matInput value="" (input)="onUpdateServerName($event)" />
+  </mat-form-field> -->
+
+<mat-form-field class="example-full-width">
+  <mat-label>Server Name</mat-label>
+  <input matInput value="" [(ngModel)]="username" />
+</mat-form-field>
+
+<button mat-button [disabled]="username === ''" (click)="resetUsername($event)">
+  Reset Username
+</button>
+<p>{{ serverName }}</p>
+<p>{{ username }}</p>
+<button mat-button [disabled]="!allowNewServer" (click)="onCreateServer()">
+  Add Server
+</button>
+
+<p>{{ serverCreation }}</p>
